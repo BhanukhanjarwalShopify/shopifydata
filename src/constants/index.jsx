@@ -131,7 +131,7 @@ export const pricingOptions = [
       "Comprehensive store info including sales data, product catalogs, and other essential details.",
       "Direct access to store owners' emails and phone numbers for targeted outreach and contact.",
     ],
-    link: "https://payhip.com/b/h7sVt" // URL for this package
+    link: "https://shopifydata.gumroad.com/l/mfmqw?_gl=1*w9jsb3*_ga*MjE0NjA3NDI3NS4xNzMxNDQzMjU1*_ga_6LJN6D94N6*MTczNDc3NzU5Ny42LjEuMTczNDc4MDAzNC4wLjAuMA" // URL for this package
   },
   {
     title: "Complete Shopify Store + Shopify Plus Data Package",
@@ -142,7 +142,7 @@ export const pricingOptions = [
       "Download data in CSV format for easy integration and comprehensive store data management.",
       "Direct contact details for store owners, including emails and phone numbers for outreach.",
     ],
-    link: "https://payhip.com/b/AgT3I" // URL for this package
+    link: "https://shopifydata.gumroad.com/l/mtohc?_gl=1*1tqun31*_ga*MjE0NjA3NDI3NS4xNzMxNDQzMjU1*_ga_6LJN6D94N6*MTczNDc3NzU5Ny42LjEuMTczNDc3OTk2MC4wLjAuMA" // URL for this package
   },
 ];
 

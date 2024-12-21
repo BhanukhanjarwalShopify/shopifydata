@@ -155,160 +155,131 @@ const FeatureSection = () => {
   const handleClosePopover = () => {
     setSelectedStore(null);
   };
-
   return (
-<div id="Data" className="relative mt-20 pt-20 border-b border-neutral-800 min-h-[800px]">
-<h2 className="text-2xl sm:text-3xl lg:text-4xl text-center mt-6 tracking-wide">
-    Access Data from Millions of Shopify Stores{" "}
-    <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-transparent bg-clip-text">
-      Like This.
-    </span>
-  </h2>
-  <div style={{margin:"50px"}}></div><div>
-    
-        <table border="1" cellPadding="10" className="w-full table-auto">
+    <div id="Data" className="relative mt-20 pt-20 border-b border-neutral-800 min-h-[800px]">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl text-center mt-6 tracking-wide">
+        Access Data from Millions of Shopify Stores{" "}
+        <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-transparent bg-clip-text">
+          Like This.
+        </span>
+      </h2>
+      <div className="my-12">
+        <table className="min-w-full bg-gray-800 text-white border border-gray-700">
           <thead>
-            <tr>
-              <th>Store Name</th>
-              <th>Website</th>
-              <th>Categories</th>
-              <th>Location</th>
-              <th>Shipping</th>
-              <th>Email</th>
-          
-       
-              <th>Actions</th> {/* New column for View More */}
+            <tr className="bg-gray-700">
+              <th className="p-2">Store Name</th>
+              <th className="p-2">Website</th>
+              <th className="p-2">Categories</th>
+              <th className="p-2">Location</th>
+              <th className="p-2">Shipping</th>
+              <th className="p-2">Email</th>
+              <th className="p-2">Actions</th>
             </tr>
           </thead>
           <tbody>
             {stores.map((store, index) => (
-              <tr key={index}>
-                <td>{store.name}</td>
-                <td><a href={store.website} target="_blank" rel="noopener noreferrer">{store.website}</a></td>
-                <td>{store.categories}</td>
-                <td>{store.location}</td>
-                <td>{store.shipping}</td>
-                <td><a href={`mailto:${store.email}`} target="_blank" rel="noopener noreferrer">{store.email}</a></td>
-            
-               
-                <td>
-                <button 
-  onClick={() => handleViewMore(store)} 
-  className="bg-gray-800 text-white p-2 rounded-lg border-2 border-yellow-400 hover:bg-gray-700 transition-colors duration-200"
->
-  View More
-</button>
-
-
+              <tr key={index} className="border-t border-gray-700">
+                <td className="p-2">{store.name}</td>
+                <td className="p-2">
+                  <a href={store.website} target="_blank" rel="noopener noreferrer" className="text-blue-400">
+                    {store.website}
+                  </a>
+                </td>
+                <td className="p-2">{store.categories}</td>
+                <td className="p-2">{store.location}</td>
+                <td className="p-2">{store.shipping}</td>
+                <td className="p-2">
+                  <a href={`mailto:${store.email}`} target="_blank" rel="noopener noreferrer" className="text-blue-400">
+                    {store.email}
+                  </a>
+                </td>
+                <td className="p-2">
+                  <button
+                    onClick={() => handleViewMore(store)}
+                    className="bg-yellow-500 text-gray-900 p-2 rounded hover:bg-yellow-400 transition-colors duration-200"
+                  >
+                    View More
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-
       </div>
 
-
-{/* Popover/Modal for View More */}
-
-{selectedStore && (
-  <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70">
-    <div className="bg-gray-800 text-white p-6 rounded-lg w-[80%] max-w-3xl">
-      {/* Store Name */}
-      <h2 className="text-2xl font-bold mb-6 text-yellow-400 text-center">{selectedStore.name}</h2>
-
-      <div className="max-h-[70vh] overflow-y-auto"> {/* Added scrollable content area */}
-        {/* Website Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Website</h2>
-          <p className="text-sm">
-            <a href={selectedStore.website} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.website}</a>
-          </p>
+      {selectedStore && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="bg-gray-800 text-white p-6 rounded-lg w-11/12 max-w-3xl">
+            <h2 className="text-2xl font-bold mb-4 text-yellow-400 text-center">{selectedStore.name}</h2>
+            <div className="max-h-[70vh] overflow-y-auto">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Website</h3>
+                <p>
+                  <a href={selectedStore.website} className="text-blue-400" target="_blank" rel="noopener noreferrer">
+                    {selectedStore.website}
+                  </a>
+                </p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Categories</h3>
+                <p>{selectedStore.categories}</p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Location</h3>
+                <p>{selectedStore.location}</p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Shipping</h3>
+                <p>{selectedStore.shipping}</p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Phone</h3>
+                <p>{selectedStore.phone}</p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Email</h3>
+                <p>
+                  <a href={`mailto:${selectedStore.email}`} className="text-blue-400">
+                    {selectedStore.email}
+                  </a>
+                </p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Social Links</h3>
+                <div>
+                  <span className="block">Facebook: <a href={selectedStore.social.facebook} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.facebook}</a></span>
+                  <span className="block">Instagram: <a href={selectedStore.social.instagram} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.instagram}</a></span>
+                  <span className="block">Twitter: <a href={selectedStore.social.twitter} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.twitter}</a></span>
+                  <span className="block">Pinterest: <a href={selectedStore.social.pinterest} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.pinterest}</a></span>
+                  <span className="block">YouTube: <a href={selectedStore.social.youtube} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.youtube}</a></span>
+                </div>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Tech Stack</h3>
+                <ul className="list-disc pl-6">
+                  {selectedStore.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-yellow-400">Other Information</h3>
+                <ul className="list-disc pl-6">
+                  {selectedStore.otherInformation.map((info, index) => (
+                    <li key={index}>{info}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <button
+              onClick={handleClosePopover}
+              className="mt-4 bg-gray-700 text-white p-2 rounded border border-yellow-400 w-full hover:bg-gray-600 transition-colors duration-200"
+            >
+              Close
+            </button>
+          </div>
         </div>
-
-        {/* Categories Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Categories</h2>
-          <p className="text-sm">{selectedStore.categories}</p>
-        </div>
-
-        {/* Location Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Location</h2>
-          <p className="text-sm">{selectedStore.location}</p>
-        </div>
-
-        {/* Shipping Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Shipping</h2>
-          <p className="text-sm">{selectedStore.shipping}</p>
-        </div>
-
-        {/* Phone Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Phone</h2>
-          <p className="text-sm">{selectedStore.phone}</p>
-        </div>
-
-        {/* Email Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Email</h2>
-          <p className="text-sm">
-            <a href={`mailto:${selectedStore.email}`} className="text-blue-400">{selectedStore.email}</a>
-          </p>
-        </div>
-
-        {/* Social Links Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Social Links</h2>
-          <p className="text-sm">
-            <span className="block mb-2">Facebook: <a href={selectedStore.social.facebook} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.facebook}</a></span>
-            <span className="block mb-2">Instagram: <a href={selectedStore.social.instagram} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.instagram}</a></span>
-            <span className="block mb-2">Twitter: <a href={selectedStore.social.twitter} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.twitter}</a></span>
-            <span className="block mb-2">Pinterest: <a href={selectedStore.social.pinterest} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.pinterest}</a></span>
-            <span className="block mb-2">YouTube: <a href={selectedStore.social.youtube} className="text-blue-400" target="_blank" rel="noopener noreferrer">{selectedStore.social.youtube}</a></span>
-          </p>
-        </div>
-
-        {/* Features Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Tech Stack</h2>
-          <ul className="list-disc pl-6 text-sm">
-            {selectedStore.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Other Information Section */}
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-yellow-400 mb-2">Other Information</h2>
-          <ul className="list-disc pl-6 text-sm">
-            {selectedStore.otherInformation.map((info, index) => (
-              <li key={index}>{info}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Close Button */}
-      <button 
-        onClick={handleClosePopover} 
-        className="mt-4 bg-gray-800 text-white p-2 rounded-lg border-2 border-yellow-400 w-full hover:bg-gray-700 transition-colors duration-200"
-      >
-        Close
-      </button>
-    </div>
-  </div>
-)}
-
-
-
-
-
-
-
-
+      )}
     </div>
   );
 };
