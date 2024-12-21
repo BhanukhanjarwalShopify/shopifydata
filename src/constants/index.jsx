@@ -15,7 +15,7 @@ import user6 from "../assets/2.jpg";
 export const navItems = [
   { label: "Data", href: "#Data" },
   { label: "Guide", href: "#Guide" },
-  { label: "Pricing", href: "#Pricing" },
+  { label: "Download", href: "#Download" },
 ];
 
 
@@ -123,17 +123,6 @@ export const checklistItems = [
 
 export const pricingOptions = [
   {
-    title: "Complete Shopify Store Data Package",
-    price: "$245",
-    features: [
-      "Access to 15+ million Shopify store profiles worldwide, including merchant names and emails.",
-      "Includes stores with $100k+ monthly sales and downloadable data in easy-to-use CSV format.",
-      "Comprehensive store info including sales data, product catalogs, and other essential details.",
-      "Direct access to store owners' emails and phone numbers for targeted outreach and contact.",
-    ],
-    link: "https://shopifydata.gumroad.com/l/mfmqw?_gl=1*w9jsb3*_ga*MjE0NjA3NDI3NS4xNzMxNDQzMjU1*_ga_6LJN6D94N6*MTczNDc3NzU5Ny42LjEuMTczNDc4MDAzNC4wLjAuMA" // URL for this package
-  },
-  {
     title: "Complete Shopify Store + Shopify Plus Data Package",
     price: "$445",
     features: [
@@ -144,6 +133,18 @@ export const pricingOptions = [
     ],
     link: "https://shopifydata.gumroad.com/l/mtohc?_gl=1*1tqun31*_ga*MjE0NjA3NDI3NS4xNzMxNDQzMjU1*_ga_6LJN6D94N6*MTczNDc3NzU5Ny42LjEuMTczNDc3OTk2MC4wLjAuMA" // URL for this package
   },
+  {
+    title: "Complete Shopify Store Data Package",
+    price: "$245",
+    features: [
+      "Access to 15+ million Shopify store profiles worldwide, including merchant names and emails.",
+      "Includes stores with $100k+ monthly sales and downloadable data in easy-to-use CSV format.",
+      "Comprehensive store info including sales data, product catalogs, and other essential details.",
+      "Direct access to store owners' emails and phone numbers for targeted outreach and contact.",
+    ],
+    link: "https://shopifydata.gumroad.com/l/mfmqw?_gl=1*w9jsb3*_ga*MjE0NjA3NDI3NS4xNzMxNDQzMjU1*_ga_6LJN6D94N6*MTczNDc3NzU5Ny42LjEuMTczNDc4MDAzNC4wLjAuMA" // URL for this package
+  },
+
 ];
 
 

@@ -20,7 +20,7 @@ const App = () => {
         <div id="Guide">
           <Workflow />
         </div>
-        <div id="Pricing">
+        <div id="Download">
           <Pricing />
         </div>
         <div id="WallOfLove">
